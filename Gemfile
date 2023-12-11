@@ -51,13 +51,16 @@ gem 'rubocop-rails'
 # Serializer
 gem 'active_model_serializers'
 
-# Pagination 
+# Pagination
 gem 'kaminari'
+
+# Devise
+gem 'devise'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'debug', platforms: %i[ mri windows ]
   gem 'byebug'
+  gem 'debug', platforms: %i[ mri windows ]
   gem 'factory_bot_rails'
   gem 'faker'
 end
@@ -82,7 +85,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
-  gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~> 5.0'
 end

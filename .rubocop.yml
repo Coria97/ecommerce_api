@@ -66,4 +66,4 @@ Rails/HasAndBelongsToMany:
   Enabled: false
 
 Layout/EndOfLine:
-  EnforcedStyle: crlf
+  EnforcedStyle: lf
