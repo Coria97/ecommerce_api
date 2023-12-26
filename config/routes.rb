@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :consumers, path: 'api/v1', path_names: {
+  devise_for :consumers, path: 'api/v1', path_names:
+  {
     sign_in: 'login',
     sign_out: 'logout',
     registration: 'signup'
   },
   controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations'
+    sessions: 'api/v1/consumers/sessions',
+    registrations: 'api/v1/consumers/registrations'
   }
 
   namespace :api do
@@ -18,24 +19,20 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 end
 
+# rubocop:disable Layout/LineLength
 # == Route Map
 #
 #                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
-#                     new_consumer_session GET    /consumers/sign_in(.:format)                                                                      devise/sessions#new
-#                         consumer_session POST   /consumers/sign_in(.:format)                                                                      devise/sessions#create
-#                 destroy_consumer_session DELETE /consumers/sign_out(.:format)                                                                     devise/sessions#destroy
-#                    new_consumer_password GET    /consumers/password/new(.:format)                                                                 devise/passwords#new
-#                   edit_consumer_password GET    /consumers/password/edit(.:format)                                                                devise/passwords#edit
-#                        consumer_password PATCH  /consumers/password(.:format)                                                                     devise/passwords#update
-#                                          PUT    /consumers/password(.:format)                                                                     devise/passwords#update
-#                                          POST   /consumers/password(.:format)                                                                     devise/passwords#create
-#             cancel_consumer_registration GET    /consumers/cancel(.:format)                                                                       devise/registrations#cancel
-#                new_consumer_registration GET    /consumers/sign_up(.:format)                                                                      devise/registrations#new
-#               edit_consumer_registration GET    /consumers/edit(.:format)                                                                         devise/registrations#edit
-#                    consumer_registration PATCH  /consumers(.:format)                                                                              devise/registrations#update
-#                                          PUT    /consumers(.:format)                                                                              devise/registrations#update
-#                                          DELETE /consumers(.:format)                                                                              devise/registrations#destroy
-#                                          POST   /consumers(.:format)                                                                              devise/registrations#create
+#                     new_consumer_session GET    /api/v1/login(.:format)                                                                           consumers/sessions#new
+#                         consumer_session POST   /api/v1/login(.:format)                                                                           consumers/sessions#create
+#                 destroy_consumer_session DELETE /api/v1/logout(.:format)                                                                          consumers/sessions#destroy
+#             cancel_consumer_registration GET    /api/v1/signup/cancel(.:format)                                                                   consumers/registrations#cancel
+#                new_consumer_registration GET    /api/v1/signup/sign_up(.:format)                                                                  consumers/registrations#new
+#               edit_consumer_registration GET    /api/v1/signup/edit(.:format)                                                                     consumers/registrations#edit
+#                    consumer_registration PATCH  /api/v1/signup(.:format)                                                                          consumers/registrations#update
+#                                          PUT    /api/v1/signup(.:format)                                                                          consumers/registrations#update
+#                                          DELETE /api/v1/signup(.:format)                                                                          consumers/registrations#destroy
+#                                          POST   /api/v1/signup(.:format)                                                                          consumers/registrations#create
 #                          api_v1_products GET    /api/v1/products(.:format)                                                                        api/v1/products#index
 #                           api_v1_product GET    /api/v1/products/:id(.:format)                                                                    api/v1/products#show
 #                       rails_health_check GET    /up(.:format)                                                                                     rails/health#show
@@ -65,3 +62,4 @@ end
 #                       rails_disk_service GET    /rails/active_storage/disk/:encoded_key/*filename(.:format)                                       active_storage/disk#show
 #                update_rails_disk_service PUT    /rails/active_storage/disk/:encoded_token(.:format)                                               active_storage/disk#update
 #                     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create
+# rubocop:enable Layout/LineLength
