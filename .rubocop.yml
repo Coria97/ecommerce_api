@@ -18,6 +18,11 @@ AllCops:
 require:
   - rubocop-rails
 
+Metrics/BlockLength:
+  Enabled: false
+  Exclude:
+    - '**/*_spec.rb'
+
 Style/Encoding:
   Enabled: false
 

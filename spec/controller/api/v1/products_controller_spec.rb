@@ -1,5 +1,3 @@
-# rubocop:disable Metrics/BlockLength
-
 require 'rails_helper'
 
 RSpec.describe Api::V1::ProductsController, type: :controller do
@@ -52,5 +50,3 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
     end
   end
 end
-
-# rubocop:enable Metrics/BlockLength
