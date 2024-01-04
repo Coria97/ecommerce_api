@@ -71,3 +71,8 @@ Rails/HasAndBelongsToMany:
 
 Layout/EndOfLine:
   Enabled: false
+
+Style/HashSyntax:
+  Enabled: false
+  Exclude:
+    - 'spec/**/*'

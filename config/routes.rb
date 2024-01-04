@@ -27,21 +27,9 @@ end
 # == Route Map
 #
 #                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
-#                         new_user_session GET    /api/v1/login(.:format)                                                                           api/v1/users/sessions#new
 #                             user_session POST   /api/v1/login(.:format)                                                                           api/v1/users/sessions#create
 #                     destroy_user_session DELETE /api/v1/logout(.:format)                                                                          api/v1/users/sessions#destroy
-#                        new_user_password GET    /api/v1/password/new(.:format)                                                                    devise/passwords#new
-#                       edit_user_password GET    /api/v1/password/edit(.:format)                                                                   devise/passwords#edit
-#                            user_password PATCH  /api/v1/password(.:format)                                                                        devise/passwords#update
-#                                          PUT    /api/v1/password(.:format)                                                                        devise/passwords#update
-#                                          POST   /api/v1/password(.:format)                                                                        devise/passwords#create
-#                 cancel_user_registration GET    /api/v1/signup/cancel(.:format)                                                                   api/v1/users/registrations#cancel
-#                    new_user_registration GET    /api/v1/signup/sign_up(.:format)                                                                  api/v1/users/registrations#new
-#                   edit_user_registration GET    /api/v1/signup/edit(.:format)                                                                     api/v1/users/registrations#edit
-#                        user_registration PATCH  /api/v1/signup(.:format)                                                                          api/v1/users/registrations#update
-#                                          PUT    /api/v1/signup(.:format)                                                                          api/v1/users/registrations#update
-#                                          DELETE /api/v1/signup(.:format)                                                                          api/v1/users/registrations#destroy
-#                                          POST   /api/v1/signup(.:format)                                                                          api/v1/users/registrations#create
+#                        user_registration POST   /api/v1/signup(.:format)                                                                          api/v1/users/registrations#create
 #                          api_v1_products GET    /api/v1/products(.:format)                                                                        api/v1/products#index
 #                           api_v1_product GET    /api/v1/products/:id(.:format)                                                                    api/v1/products#show
 #                       rails_health_check GET    /up(.:format)                                                                                     rails/health#show
