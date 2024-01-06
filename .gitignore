@@ -103,3 +103,9 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 /public/uploads
+
+# Ignore Todo rubocop
+.rubocop_todo.yml
+
+# Ignore vscode settings
+settings.json

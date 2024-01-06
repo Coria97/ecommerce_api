@@ -23,5 +23,6 @@ module EcommerceApi
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.annotate_models = true
   end
 end

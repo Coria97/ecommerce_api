@@ -1,20 +1,29 @@
 default: &default
   adapter: postgresql
   encoding: utf8
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: postgres
   password: admin
   host: localhost
-  database: ecommerce_db
 
 development:
   <<: *default
-  database: your_app_development
+  database: ecommerce_db_development
+  username: postgres
+  password: admin
+  host: localhost
+  port: 5432
 
 test:
   <<: *default
-  database: your_app_test
+  database: ecommerce_db_test
+  username: postgres
+  password: admin
+  host: localhost
+  port: 5432
 
 production:
   <<: *default
-  database: your_app_production
+  database: ecommerce_db_production
+  username: postgres
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
