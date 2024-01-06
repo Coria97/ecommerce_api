@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Product, type: :model do
   describe 'validations' do
-    it { is_expected.to validate_presence_of(:name) }
-    it { is_expected.to validate_presence_of(:price) }
-    it { is_expected.to validate_presence_of(:stock_quantity) }
-    it { is_expected.to validate_presence_of(:sku) }
+    %i[name price stock_quantity sku].each do |field|
+      it { is_expected.to validate_presence_of(field) }
+    end
   end
 
   describe 'scopes' do
