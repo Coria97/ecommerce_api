@@ -1,3 +1,5 @@
+inherit_from: .rubocop_todo.yml
+
 AllCops:
   Exclude:
     - db/migrate/**/*
@@ -49,6 +51,7 @@ Style/WordArray:
 # Defaults all strings to double quotes. Less performant, but
 # nicer for consistency, and for adding interpolation later.
 Style/StringLiterals:
+  EnforcedStyle: single_quotes
   EnforcedStyle: single_quotes
 
 # Prettier hashes.
