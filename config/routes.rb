@@ -19,6 +19,26 @@ Rails.application.routes.draw do
     end
   end
 
+  devise_for :users, path: 'api/v1', path_names:
+  {
+    sign_in: 'login',
+    sign_out: 'logout',
+    registration: 'signup'
+  },
+  skip: :all
+
+  as :user do
+    post 'api/v1/login', to: 'api/v1/users/sessions#create', as: :user_session
+    delete 'api/v1/logout', to: 'api/v1/users/sessions#destroy', as: :destroy_user_session
+    post 'api/v1/signup', to: 'api/v1/users/registrations#create', as: :user_registration
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :products, only: %i[index show]
+    end
+  end
+
   get "up" => "rails/health#show", as: :rails_health_check
 end
 

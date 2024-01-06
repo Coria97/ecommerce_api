@@ -67,6 +67,10 @@ group :development, :test do
   gem 'debug', platforms: %i[ mri windows ]
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'byebug'
+  gem 'debug', platforms: %i[ mri windows ]
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
@@ -88,6 +92,10 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 5.0'
   gem 'capybara'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
